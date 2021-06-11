@@ -24,7 +24,7 @@ export default function TagList() {
             <h2>Tags</h2>
             <div className="df p-1 aic tags--list">
                 {tags.map(({ name, toggled }, index) => (
-                    <div key={index} className={`${toggled ? "tag__active " : ""}tags--list__tag p-2 mr-3 mt-3`} onClick={handleClick(index)}>
+                    <div key={index} className={`${toggled ? "tag__active " : ""}tag p-2 mr-3 mt-3`} onClick={handleClick(index)}>
                         <span>{name}</span>
                     </div>
                 ))}

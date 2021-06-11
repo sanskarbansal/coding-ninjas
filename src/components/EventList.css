@@ -1,0 +1,6 @@
+.eventlist {
+    box-sizing: border-box;
+    width: 78%;
+    justify-content: space-evenly;
+    gap: 2rem;
+}

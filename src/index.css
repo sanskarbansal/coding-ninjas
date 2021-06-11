@@ -10,9 +10,9 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-.active {
+.active.active.active.active {
     color: #fa7328;
-    font-weight: 700;
+    font-weight: 550;
 }
 button {
     border: none;
@@ -84,4 +84,9 @@ button {
 }
 .p-4 {
     padding: 1.6rem;
+}
+
+.tag {
+    background: #eee;
+    cursor: pointer;
 }

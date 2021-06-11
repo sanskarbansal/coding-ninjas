@@ -8,10 +8,7 @@
 }
 .tags--list {
 }
-.tags--list__tag {
-    background: #eee;
-    cursor: pointer;
-}
+
 .tags--list__tag:active {
     transform: scale(0.95);
 }
