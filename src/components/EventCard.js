@@ -4,7 +4,7 @@ export default function EventCard({ data }) {
     return (
         <div className="event--card df fdc">
             <div className="event--card__header">
-                <img src={data.cover_picture} alt="" />
+                <img src={data.mobile_cover_picture} alt="" />
             </div>
             <div className="event--card__body df p-2 fdc">
                 <h4>{data.name}</h4>

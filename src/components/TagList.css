@@ -1,5 +1,7 @@
 .tags--container {
     width: 20%;
+    /* position: sticky; */
+    /* top: 10px; */
 }
 .tags--container h2 {
     color: grey;

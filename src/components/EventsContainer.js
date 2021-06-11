@@ -12,17 +12,17 @@ const categoryButtons = [
     {
         srcSelected: "https://www.codingninjas.com/assets-landing/images/webinar-selected.svg",
         srcUnSelected: "https://www.codingninjas.com/assets-landing/images/webinar-unselected.svg ",
-        category: "Webinars",
+        category: "Webinar",
     },
     {
         srcSelected: "https://www.codingninjas.com/assets-landing/images/coding-events-selected.svg",
         srcUnSelected: "https://www.codingninjas.com/assets-landing/images/coding-events-unselected.svg",
-        category: "Coding Events",
+        category: "Coding Event",
     },
     {
         srcSelected: "https://files.codingninjas.in/bootcamp_events_selected-5398.png",
         srcUnSelected: "https://files.codingninjas.in/bootcamp_events_unselected-5397.png",
-        category: "Bootcamp Events",
+        category: "Bootcamp Event",
     },
     {
         srcSelected: "https://files.codingninjas.in/workshop_selected-5396.png",
@@ -35,7 +35,7 @@ const subcategoryButtons = ["Upcoming", "Archived", "All Time Favourites"];
 
 export default function EventsContainer() {
     const [activeCategory, setActiveCategory] = useState("All Events");
-    const [subCategory, setSubCategory] = useState("Upcoming");
+    const [activeSubCategory, setSubCategory] = useState("Upcoming");
     const handleCategoryClick = (cat) => (event) => {
         setActiveCategory(cat);
     };
@@ -53,13 +53,13 @@ export default function EventsContainer() {
             </div>
             <div className="df aic events--subcat p-3">
                 {subcategoryButtons.map((cat) => (
-                    <button className={`${subCategory === cat && "active"}`} onClick={handleSubcategoryClick(cat)}>
+                    <button className={`${activeSubCategory === cat && "active"}`} onClick={handleSubcategoryClick(cat)}>
                         {cat}
                     </button>
                 ))}
             </div>
             <div className="df events--body">
-                <EventsList />
+                <EventsList category={activeCategory} subcategory={activeSubCategory} />
                 <TagList />
             </div>
         </div>
