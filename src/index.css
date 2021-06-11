@@ -1,13 +1,57 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fcfcfc;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+button {
+    border: none;
+}
+.df {
+    display: flex;
+    flex-wrap: wrap;
+}
+.fdc {
+    flex-direction: column;
+}
+.jcc {
+    justify-content: center;
+}
+.aic {
+    align-items: center;
+}
+
+.mt-1.mt-1.mt-1.mt-1 {
+    margin-top: 0.2rem;
+}
+.mt-2.mt-2.mt-2.mt-2 {
+    margin-top: 0.4rem;
+}
+.mt-3.mt-3.mt-3.mt-3 {
+    margin-top: 0.8rem;
+}
+.mt-4.mt-4.mt-4.mt-4 {
+    margin-top: 1.6rem;
+}
+.mx-auto {
+    margin: 0 auto;
+}
+
+.p-1 {
+    padding: 0.2rem;
+}
+.p-2 {
+    padding: 0.4rem;
+}
+.p-3 {
+    padding: 0.8rem;
+}
+.p-4 {
+    padding: 1.6rem;
 }
