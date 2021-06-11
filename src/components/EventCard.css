@@ -22,6 +22,21 @@
 .event--card__footer {
     flex: 0.2;
     border-top: 1px solid lightgray;
+    justify-content: space-between;
+}
+.avatars {
+    height: 4rem;
+}
+.avatars img {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 3rem;
+    object-fit: cover;
+    /* width: 20px; */
+}
+.event--card__footer > div:first-of-type > div:nth-child(2) {
+    font-size: 0.8rem;
+    color: grey;
 }
 .event--card__footer button {
     position: relative;

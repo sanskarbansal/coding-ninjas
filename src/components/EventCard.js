@@ -18,7 +18,20 @@ export default function EventCard({ data }) {
                     ))}
                 </div>
             </div>
-            <div className="df event--card__footer aic">{data.event_sub_category === "Upcoming" && <button>Register Now</button>}</div>
+            <div className="df event--card__footer aic">
+                <div className="p-2">
+                    <div className="avatars df aic">
+                        {data.registered_users.top_users.map(({ name, image_url }) => (
+                            // <div className="avatar">
+                            <img src={image_url} />
+                            // </div>
+                        ))}
+                    </div>
+                    <div>and {data.registered_users.other_users_count} others registered</div>
+                </div>
+
+                {data.event_sub_category === "Upcoming" && <button>Register Now</button>}
+            </div>
         </div>
     );
 }
