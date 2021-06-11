@@ -1,4 +1,38 @@
 .events--container {
-    border: 1px solid grey;
+    border: 1px solid rgb(192, 190, 190);
     border-radius: 8px;
+    background: white;
+}
+.events--cat button {
+    font-size: 1.3rem;
+    color: grey;
+    width: 220px;
+    text-align: left;
+    padding: 1.5rem 0;
+}
+/* .events--cat button:last-of-type {
+    text-align: center;
+} */
+.events--cat {
+    justify-content: space-evenly;
+}
+.events--cat img {
+    width: 20px;
+    margin-right: 5px;
+}
+.events--subcat {
+    background: #fafafa;
+    justify-content: space-evenly;
+    border-width: 1px 0;
+    border-color: rgba(167, 167, 167, 0.672);
+    border-style: solid;
+}
+.events--subcat button {
+    font-size: 1.3rem;
+    /* font-weight: 300; */
+}
+.events--subcat button:not(.active) {
+    font-weight: 300;
+}
+.events--body {
 }

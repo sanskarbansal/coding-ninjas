@@ -1,0 +1,22 @@
+.tags--container {
+    width: 20%;
+}
+.tags--container h2 {
+    color: grey;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.tags--list {
+}
+.tags--list__tag {
+    background: #eee;
+    cursor: pointer;
+}
+.tags--list__tag:active {
+    transform: scale(0.95);
+}
+
+.tag__active {
+    background: #fa7328;
+    color: white;
+}
