@@ -14,7 +14,9 @@ export default function EventCard({ data }) {
                 </div>
                 <div className="event--body__tags mt-3 df">
                     {data.card_tags.map((tag) => (
-                        <span className="tag p-1 mr-3">{tag}</span>
+                        <span key={tag} className="tag p-1 mr-3">
+                            {tag}
+                        </span>
                     ))}
                 </div>
             </div>
@@ -22,11 +24,11 @@ export default function EventCard({ data }) {
                 {data.registered_users.top_users.length > 0 && (
                     <div className="p-2">
                         <div className="avatars df aic">
-                            {data.registered_users.top_users.map(({ name, image_url }) => (
-                                <img src={image_url} />
+                            {data.registered_users.top_users.map(({ image_url }, index) => (
+                                <>{image_url && <img key={index} src={image_url} alt="User" />}</>
                             ))}
                         </div>
-                        <div>and {data.registered_users.other_users_count} others registered</div>
+                        <span>and {data.registered_users.other_users_count} others registered</span>
                     </div>
                 )}
 

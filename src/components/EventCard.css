@@ -1,12 +1,12 @@
 .event--card {
     min-width: 400px;
-    max-width: 420px; 
+    max-width: 420px;
     flex: 1;
     height: 500px;
     cursor: pointer;
     justify-content: space-between;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 0 5px 0px #3f3d3d47;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 0px #3f3d3d47, -1px -1px 5px 0px #3f3d3d47;
     overflow: hidden;
     flex-wrap: nowrap;
 }
@@ -19,7 +19,7 @@
     flex: 1;
     width: 100%;
 }
-.event--card__body h4{
+.event--card__body h4 {
     margin-bottom: 0;
 }
 
@@ -30,8 +30,11 @@
     border-top: 1px solid lightgray;
     justify-content: space-between;
 }
-.event--card__footer > div:first-child{
-    height: 3rem; ;
+.event--card__footer > div:first-child {
+    height: 3rem;
+    padding-right: 0;
+    padding-top: 0;
+    /* max-width: 200px; */
 }
 .avatars {
     height: 2rem;
@@ -50,18 +53,12 @@
     position: relative;
     background-color: #fbaf7c;
     color: white;
-    width: 185px;
+    width: 120px;
     height: 2rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-left: auto;
 }
-.event--body__tags{
-    row-gap: .8rem;
-}
-.event--body__tags span {
-    font-size: 0.8rem;
-    border-radius: 2px;
-}
+
 .event--card__footer button::before {
     content: "";
     position: absolute;
@@ -78,9 +75,34 @@
     overflow: scroll;
 }
 
+.event--body__tags {
+    row-gap: 0.8rem;
+}
+.event--body__tags span {
+    font-size: 0.8rem;
+    border-radius: 2px;
+}
+
 .event__short__desc p {
     width: 100%;
     color: grey;
     font-weight: 500;
     font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 730px) {
+    .event--card {
+        min-width: 95%;
+    }
+}
+@media screen and (max-width: 420px) {
+    .avatars img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .avatars + span {
+        display: inline-block;
+        max-width: 120px;
+        font-size: 0.8rem;
+    }
 }

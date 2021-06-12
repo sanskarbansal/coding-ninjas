@@ -45,16 +45,16 @@ export default function EventsContainer() {
     };
     return (
         <div className="events--container">
-            <div className="df aic events--cat">
+            <div className="df aic events--cat p-3">
                 {categoryButtons.map(({ srcSelected, srcUnSelected, category }, index) => (
                     <button key={category} className={`p-3 ${activeCategory === category && "active"}`} onClick={handleCategoryClick(category)}>
-                        <img src={activeCategory === category ? srcSelected : srcUnSelected} /> {category}
+                        <img src={activeCategory === category ? srcSelected : srcUnSelected} alt="Logos" /> {category}
                     </button>
                 ))}
             </div>
             <div className="df aic events--subcat p-3">
                 {subcategoryButtons.map((cat) => (
-                    <button className={`${activeSubCategory === cat && "active"}`} onClick={handleSubcategoryClick(cat)}>
+                    <button key={cat} className={`${activeSubCategory === cat && "active"}`} onClick={handleSubcategoryClick(cat)}>
                         {cat}
                     </button>
                 ))}

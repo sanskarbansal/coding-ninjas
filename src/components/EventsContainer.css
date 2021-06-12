@@ -8,13 +8,32 @@
 .events--cat button {
     font-size: 1.3rem;
     color: grey;
-    width: 220px;
+    min-width: 230px;
     text-align: left;
-    padding: 1.5rem 0;
 }
 
 .events--cat {
-    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    height: 4rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.events--cat ::-webkit-scrollbar,
+.events--subcat ::-webkit-scrollbar {
+    width: 1px;
+}
+.events--cat ::-webkit-scrollbar-track,
+.events--subcat ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.events--cat ::-webkit-scrollbar-thumb,
+.events--subcat ::-webkit-scrollbar-thumb {
+    background-color: rgb(46, 45, 45);
+}
+.events--cat ::-webkit-scrollbar-thumb:hover,
+.events--subcat ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(7, 7, 7);
 }
 .events--cat img {
     width: 20px;
@@ -22,14 +41,16 @@
 }
 .events--subcat {
     background: #fafafa;
-    justify-content: space-evenly;
+    flex-wrap: nowrap;
     border-width: 1px 0;
     border-color: rgba(167, 167, 167, 0.672);
     border-style: solid;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 .events--subcat button {
     font-size: 1.3rem;
-    /* font-weight: 300; */
+    min-width: 220px;
 }
 .events--subcat button:not(.active) {
     font-weight: 300;
