@@ -1,6 +1,22 @@
 .eventlist {
     box-sizing: border-box;
-    width: 78%;
     justify-content: space-evenly;
     gap: 2rem;
+}
+.container{
+    width: 80%;
+    padding-bottom: 0.8rem;
+}
+.pagination--container{
+    margin-left: auto;
+    width: 200px;
+    justify-content: space-between;
+
+}
+.pagination--container button{
+    background: #fc9d69;
+    color: white; 
+    padding: 0.2rem 0.8rem; 
+    border-radius: 6px;
+    font-size: 1.8rem;
 }

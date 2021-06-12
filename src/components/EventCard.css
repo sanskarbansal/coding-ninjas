@@ -2,7 +2,7 @@
     min-width: 400px;
     max-width: 420px; 
     flex: 1;
-    height: 450px;
+    height: 500px;
     cursor: pointer;
     justify-content: space-between;
     border-radius: 0 0 8px 8px;
@@ -55,8 +55,12 @@
     font-size: 1rem;
     margin-left: auto;
 }
+.event--body__tags{
+    row-gap: .8rem;
+}
 .event--body__tags span {
     font-size: 0.8rem;
+    border-radius: 2px;
 }
 .event--card__footer button::before {
     content: "";

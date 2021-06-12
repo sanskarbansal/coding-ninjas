@@ -37,34 +37,4 @@ export default function TagList({setActiveTags}) {
         </div>
     );
 }
-// import axios from "axios";
-// import React, { useEffect, useState } from "react";
-// import "./TagList.css";
-// export default function TagList() {
-//     const [tags, setTags] = useState([]);
-//     const [activeTags, setActiveTags] = useState([]);
-//     useEffect(() => {
-//         axios.get("https://api.codingninjas.com/api/v3/event_tags").then((res) => {
-//             setTags(res.data.data.tags, () => setActiveTags([false]));
-//         });
-//     }, []);
 
-//     const handleClick = (tag) => (event) => {
-//         if (activeTags.includes(tag)) {
-//             return setActiveTags(activeTags.filter((t) => t !== tag));
-//         }
-//         setActiveTags([...activeTags, tag]);
-//     };
-//     return (
-//         <div className="tags--container">
-//             <h2>Tags</h2>
-//             <div className="df p-1 aic tags--list">
-//                 {tags.map((tag, index) => (
-//                     <div key={index} className="tags--list__tag p-2 mr-3 mt-3" onClick={handleClick(tag)}>
-//                         <span>{tag}</span>
-//                     </div>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// }

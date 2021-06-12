@@ -36,7 +36,7 @@ const subcategoryButtons = ["Upcoming", "Archived", "All Time Favourites"];
 export default function EventsContainer() {
     const [activeCategory, setActiveCategory] = useState("All Events");
     const [activeSubCategory, setActiveSubCategory] = useState("Upcoming");
-    const [activeTags, setActiveTags] = useState([]); 
+    const [activeTags, setActiveTags] = useState([]);
     const handleCategoryClick = (cat) => (event) => {
         setActiveCategory(cat);
     };
@@ -61,7 +61,7 @@ export default function EventsContainer() {
             </div>
             <div className="df events--body">
                 <EventsList tags={activeTags} category={activeCategory} subcategory={activeSubCategory} />
-                <TagList setActiveTags={setActiveTags}/>
+                <TagList setActiveTags={setActiveTags} />
             </div>
         </div>
     );

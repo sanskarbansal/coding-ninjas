@@ -90,3 +90,18 @@ button {
     background: #eee;
     cursor: pointer;
 }
+.loader {
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px grey;
+    border-left-color: transparent;
+    animation: rotate 0.8s ease-in infinite both;
+    animation-fill-mode: backwards;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
