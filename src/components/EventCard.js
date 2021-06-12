@@ -25,7 +25,7 @@ export default function EventCard({ data }) {
                     <div className="p-2">
                         <div className="avatars df aic">
                             {data.registered_users.top_users.map(({ image_url }, index) => (
-                                <>{image_url && <img key={index} src={image_url} alt="User" />}</>
+                                <React.Fragment key={index}>{image_url && <img src={image_url} alt="User" />}</React.Fragment>
                             ))}
                         </div>
                         <span>and {data.registered_users.other_users_count} others registered</span>

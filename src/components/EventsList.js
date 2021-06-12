@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 import "./EventList.css";
+import Loader from "./Loader";
 
 const fetchUrl = (event_category = "WEBINAR", event_sub_category = "Upcoming", tag_list = [], page = 1) => {
     let tl = tag_list.join(",");
@@ -13,13 +14,16 @@ export default function EventsList({ category, subcategory, tags }) {
     const [events, setEvents] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         setCurrentPage(1);
     }, [category, subcategory, tags]);
     useEffect(() => {
+        setLoading(true);
         axios.get(fetchUrl(category.replace(" ", "_").toUpperCase(), subcategory, tags, currentPage)).then((res) => {
             setTotalPages(res.data.data.page_count);
             setEvents(res.data.data.events);
+            setLoading(false);
         });
     }, [category, subcategory, tags, currentPage]);
 
@@ -29,26 +33,34 @@ export default function EventsList({ category, subcategory, tags }) {
         }
     };
     return (
-        <div className="container ">
-            <div className="df eventlist p-4">
-                {events.length === 0 && <h1 style={{ fontSize: "5rem", fontWeight: 200, textTransform: "capitalize" }}>No events found</h1>}
-                {events.map((event) => (
-                    <EventCard key={event.id} data={event} />
-                ))}
-            </div>
-            {totalPages > 1 && (
-                <div className="pagination--container df aic">
-                    <button className="left" onClick={handlePage(-1)}>
-                        &lt;
-                    </button>
-                    <span>
-                        Page {currentPage} of {totalPages}
-                    </span>
-                    <button className="right" onClick={handlePage(1)}>
-                        &gt;
-                    </button>
+        <>
+            {loading ? (
+                <div style={{ width: "80%", height: "300px" }} className="df jcc aic">
+                    <Loader diameter="100px" />
+                </div>
+            ) : (
+                <div className="container ">
+                    <div className="df eventlist p-4">
+                        {events.length === 0 && <h1 style={{ fontSize: "5rem", fontWeight: 200, textTransform: "capitalize" }}>No events found</h1>}
+                        {events.map((event) => (
+                            <EventCard key={event.id} data={event} />
+                        ))}
+                    </div>
+                    {totalPages > 1 && (
+                        <div className="pagination--container df aic">
+                            <button className="left" onClick={handlePage(-1)}>
+                                &lt;
+                            </button>
+                            <span>
+                                Page {currentPage} of {totalPages}
+                            </span>
+                            <button className="right" onClick={handlePage(1)}>
+                                &gt;
+                            </button>
+                        </div>
+                    )}
                 </div>
             )}
-        </div>
+        </>
     );
 }
