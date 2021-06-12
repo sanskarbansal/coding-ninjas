@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./TagList.css";
-export default function TagList() {
+export default function TagList({setActiveTags}) {
     const [tags, setTags] = useState([]);
     useEffect(() => {
         axios.get("https://api.codingninjas.com/api/v3/event_tags").then((res) => {
@@ -13,10 +13,15 @@ export default function TagList() {
             setTags(mappedTags);
         });
     }, []);
+    // useEffect(() => {
+    //     setActiveTags(tags.filter(tag => tag.toggled).map(tag => tag.name)); 
+    // }, [tags])
 
     const handleClick = (index) => (event) => {
         let tagsCopy = [...tags];
         tagsCopy[index].toggled = !tagsCopy[index].toggled;
+        
+        setActiveTags(tagsCopy.filter(tag => tag.toggled).map(tag => tag.name)); 
         setTags(tagsCopy);
     };
     return (

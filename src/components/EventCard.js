@@ -12,13 +12,15 @@ export default function EventCard({ data }) {
                 <div className="event__short__desc">
                     <p>{data.short_desc}</p>
                 </div>
-                <div className="event--body__tags mt-4">
+                <div className="event--body__tags mt-3 df">
                     {data.card_tags.map((tag) => (
                         <span className="tag p-2 ml-1 mr-1">{tag}</span>
                     ))}
                 </div>
             </div>
             <div className="df event--card__footer aic">
+                {
+                data.registered_users.top_users.length > 0 && 
                 <div className="p-2">
                     <div className="avatars df aic">
                         {data.registered_users.top_users.map(({ name, image_url }) => (
@@ -29,6 +31,7 @@ export default function EventCard({ data }) {
                     </div>
                     <div>and {data.registered_users.other_users_count} others registered</div>
                 </div>
+                }
 
                 {data.event_sub_category === "Upcoming" && <button>Register Now</button>}
             </div>
