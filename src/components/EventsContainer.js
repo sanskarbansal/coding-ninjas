@@ -31,7 +31,7 @@ const categoryButtons = [
     },
 ];
 
-const subcategoryButtons = ["Upcoming", "Archived", "All Time Favourites"];
+const subcategoryButtons = ["Upcoming", "Archived", "All Time Favorites"];
 
 export default function EventsContainer() {
     const [activeCategory, setActiveCategory] = useState("All Events");
